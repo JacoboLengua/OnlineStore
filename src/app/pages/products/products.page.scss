@@ -1,0 +1,381 @@
+ion-toolbar { 
+
+  --background: linear-gradient(135deg, #1e88e526 0%, #000000 100%); 
+
+  --color: rgb(255, 255, 255); /* Color del texto blanco para mejor contraste */ 
+
+  --border-width: 0; /* Elimina el borde inferior si existe */ 
+
+ 
+
+  /* Efecto de transparencia para el gradiente */ 
+
+  backdrop-filter: blur(8px); 
+
+  -webkit-backdrop-filter: blur(8px); 
+
+} 
+
+ 
+
+/* Estilo para el botón */ 
+
+ion-button { 
+
+  --color: white; 
+
+  --background-hover: rgba(255, 255, 255, 0.1); 
+
+} 
+
+ 
+
+/* Estilo para el icono */ 
+
+ion-icon { 
+
+  font-size: 1.5em; 
+
+} 
+
+ 
+
+ 
+
+ion-content { 
+
+  --background: linear-gradient(135deg, #1e88e526 0%, #000000 100%); 
+
+} 
+
+ 
+
+ion-list { 
+
+  background: transparent; 
+
+  ion-item { 
+
+    --background: rgba(255, 255, 255, 0.9); 
+
+    margin-bottom: 12px; 
+
+    border-radius: 8px; 
+
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+
+  } 
+
+} 
+
+ 
+
+/* Opcional: Mejora el estilo del texto para mejor contraste */ 
+
+ion-label { 
+
+  h2 { 
+
+    color: #212121; 
+
+    font-weight: 600; 
+
+  } 
+
+  p { 
+
+    color: #424242; 
+
+  } 
+
+} 
+
+ 
+
+/* Estilo para el mensaje cuando no hay artículos */ 
+
+ion-text { 
+
+  color: white !important; 
+
+} 
+
+ 
+
+/* Estilo para el spinner de carga */ 
+
+ion-spinner { 
+
+  color: white; 
+
+} 
+
+ 
+
+ 
+
+//  estilos para el infinite scroll 
+
+ 
+
+/* products.page.scss */ 
+
+ion-infinite-scroll { 
+
+  margin-bottom: 20px; 
+
+} 
+
+ 
+
+/* Estilo para cuando no hay más datos */ 
+
+ion-infinite-scroll[disabled] { 
+
+  display: none; 
+
+} 
+
+ 
+
+ion-toolbar { 
+
+  --background: linear-gradient(135deg, #1e88e526 0%, #000000 100%); 
+
+  --color: rgb(255, 255, 255); /* Color del texto blanco para mejor contraste */ 
+
+  --border-width: 0; /* Elimina el borde inferior si existe */ 
+
+ 
+
+  /* Efecto de transparencia para el gradiente */ 
+
+  backdrop-filter: blur(8px); 
+
+  -webkit-backdrop-filter: blur(8px); 
+
+} 
+
+ 
+
+/* Estilo para el botón */ 
+
+ion-button { 
+
+  --color: white; 
+
+  --background-hover: rgba(15, 15, 15, 0.1); 
+  
+ 
+} 
+
+.boton-centro {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 1rem;
+}
+
+ 
+
+/* Estilo para el icono */ 
+
+ion-icon { 
+
+  font-size: 1.5em; 
+
+} 
+
+.icon-bar-expand {
+  --background: #ffffff;
+  padding: 0;
+
+  .full-width-buttons {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+
+    ion-button {
+      flex: 1;
+      justify-content: center;
+      --padding-start: 0;
+      --padding-end: 0;
+    }
+
+    ion-icon {
+      font-size: 24px;
+    }
+  }
+}
+
+
+ #toolbar {
+    transition: opacity 0.3s ease-in-out;
+  }
+
+ 
+
+ 
+
+ion-content { 
+
+  --background: linear-gradient(135deg, #1e88e526 0%, #000000 100%); 
+
+} 
+
+ 
+
+ion-list { 
+
+  background: transparent; 
+
+  ion-item { 
+
+    --background: rgba(255, 255, 255, 0.9); 
+
+    margin-bottom: 12px; 
+
+    border-radius: 8px; 
+
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+
+  } 
+
+} 
+
+ 
+
+/* Opcional: Mejora el estilo del texto para mejor contraste */ 
+
+ion-label { 
+
+  h2 { 
+
+    color: #212121; 
+
+    font-weight: 600; 
+
+  } 
+
+  p { 
+
+    color: #424242; 
+
+  } 
+
+} 
+
+/* Estilos existentes (no los repito para no hacerlo largo) */
+
+/* Estilo para el botón de Comprar */
+.boton-comprar {
+  --background: #000000; /* Color negro */
+  --color: #ffffff; /* Texto blanco */
+  --background-hover: #333333; /* Un poco más claro al pasar el mouse */
+  margin-top: 10px; /* Separación del contenido */
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+ 
+
+/* Estilo para el mensaje cuando no hay artículos */ 
+
+ion-text { 
+
+  color: white !important; 
+
+} 
+
+ 
+
+/* Estilo para el spinner de carga */ 
+
+ion-spinner { 
+
+  color: white; 
+
+} 
+
+ 
+
+ 
+
+//  estilos para el infinite scroll 
+
+ 
+
+/* products.page.scss */ 
+
+ion-infinite-scroll { 
+
+  margin-bottom: 20px; 
+
+} 
+
+ 
+
+/* Estilo para cuando no hay más datos */ 
+
+ion-infinite-scroll[disabled] { 
+
+  display: none; 
+
+} 
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 16px;
+  padding: 16px;
+}
+
+ion-card {
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+ion-card img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+}
+
+ion-card-title {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+ion-card-content p {
+  margin: 4px 0;
+  font-size: 0.9rem;
+}
+
+.icon-bar {
+  --background: #ffffff;
+  border-bottom: 1px solid #e0e0e0;
+  justify-content: space-between;
+  padding: 0 8px;
+}
+
+ion-toolbar.icon-bar ion-button {
+  margin: 0 4px;
+}
+
+ion-icon {
+  font-size: 22px;
+}
+
+.logout-button {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 1000;
+  --background: #f44336; /* color rojo */
+  --color: #fff;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}

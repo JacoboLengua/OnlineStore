@@ -1,0 +1,95 @@
+<!-- Encabezado de la página -->
+<ion-header>
+
+  <ion-toolbar>
+    <ion-title>Welcome, the online store</ion-title>
+
+    <!-- Botón que recarga la lista -->
+    <ion-buttons slot="end">
+      <ion-button (click)="cargarArticulos()">
+        <ion-icon name="apps"></ion-icon>
+      </ion-button>
+      <ion-button (click)="logout()">
+        <ion-icon name="log-out-outline" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+  <!-- Barra de iconos (tipo Facebook) -->
+
+  <ion-toolbar id="toolbar" class="icon-bar-expand">
+    <ion-buttons class="full-width-buttons">
+      <ion-button [routerLink]="['/home']" fill="clear">
+        <ion-icon name="home" slot="icon-only" color="light"></ion-icon>
+      </ion-button>
+  
+      <ion-button [routerLink]="['/profile']" fill="clear">
+        <ion-icon name="person-circle-outline" slot="icon-only" color="light"></ion-icon>
+      </ion-button>
+  
+    </ion-buttons>
+  </ion-toolbar>
+  
+</ion-header>
+
+<ion-content>
+
+  <!-- Refresher -->
+  <ion-refresher slot="fixed" (ionRefresh)="refrescarArticulos($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <!-- Indicador de carga -->
+  <div *ngIf="isLoading" class="ion-text-center ion-padding">
+    <ion-spinner></ion-spinner>
+    <p>Cargando artículos...</p>
+  </div>
+
+  <!-- Mensaje de error -->
+  <div *ngIf="errorMessage" class="ion-text-center ion-padding">
+    <ion-text color="danger">{{errorMessage}}</ion-text>
+  </div>
+
+
+  <!-- Lista de productos en tarjetas -->
+  <ion-content (ionScroll)="onScroll($event)" scrollEvents="true">
+    <ion-list *ngIf="articulos.length > 0" lines="none">
+      <div class="card-grid">
+        <ion-card *ngFor="let articulo of articulos" (click)="verDetalleProducto(articulo.id)">
+          <img *ngIf="articulo.imagen1" [src]="articulo.imagen1" [alt]="articulo.nombre" />
+         
+          <!-- Miniatura de la imagen si está disponible -->
+          <ion-thumbnail slot="start" *ngIf="articulo.imagen1">
+            <img [src]="articulo.imagen1" [alt]="articulo.nombre">
+          </ion-thumbnail>
+  
+          <ion-card-header>
+            <ion-card-title>{{articulo.nombre}}</ion-card-title>
+          </ion-card-header>
+  
+          <div class="boton-centro">
+            <ion-button 
+              (click)="comprarProducto(articulo); $event.stopPropagation();">
+              Comprar
+            </ion-button>
+          </div>
+    
+        </ion-card>
+      </div>
+    </ion-list>
+  </ion-content>
+  
+
+  <!-- Scroll infinito -->
+  <ion-infinite-scroll (ionInfinite)="cargarMasArticulos($event)">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Cargando más artículos...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
+  
+  <!-- Sin artículos -->
+  <div *ngIf="articulos.length === 0 && !isLoading" class="ion-text-center ion-padding">
+    <ion-text color="medium">No hay artículos disponibles</ion-text>
+  </div>
+
+</ion-content>

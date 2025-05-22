@@ -1,0 +1,38 @@
+<ion-content class="ion-padding">
+  <div class="box">
+    <div class="header">Register</div>
+    <form (ngSubmit)="registerUser()" #form="ngForm">
+
+      <ion-item>
+        <ion-icon name="person-outline" slot="start"></ion-icon>
+        <ion-input placeholder="Name" [(ngModel)]="name" name="name" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-icon name="people-outline" slot="start"></ion-icon>
+        <ion-input placeholder="Full Name" [(ngModel)]="full_name" name="full_name" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-icon name="at-outline" slot="start"></ion-icon>
+        <ion-input placeholder="Username" [(ngModel)]="username" name="username" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-icon name="mail-outline" slot="start"></ion-icon>
+        <ion-input type="email" placeholder="Email" [(ngModel)]="email" name="email" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-icon name="lock-closed-outline" slot="start"></ion-icon>
+        <ion-input type="password" placeholder="Password" [(ngModel)]="password" name="password" required></ion-input>
+      </ion-item>
+
+      <ion-button expand="block" class="ion-margin-top" type="submit">Submit</ion-button>
+
+      <ion-button expand="full" fill="clear" (click)="goToLogin()">
+        Do you have an account? Log In
+      </ion-button>
+    </form>
+  </div>
+</ion-content>

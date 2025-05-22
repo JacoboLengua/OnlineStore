@@ -1,0 +1,82 @@
+/* login.page.scss */
+
+ion-content {
+  --background: none;
+  background: url('https://i.pinimg.com/736x/aa/db/0d/aadb0d5632986e66fb566453d6ea13a9.jpg') no-repeat center center / cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 0;
+}
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  padding: 20px; /* para espacio interno en pantallas pequeñas */
+  box-sizing: border-box;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.9);
+  box-sizing: border-box;
+}
+
+ion-card-title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+ion-item {
+  margin-top: 15px;
+}
+
+ion-button {
+  margin-top: 20px;
+  --border-radius: 20px;
+  --background: #3880ff;
+}
+
+ion-progress-bar {
+  margin-bottom: 20px;
+}
+
+@media (max-width: 480px) {
+  .login-card {
+    padding: 15px;
+  }
+
+  ion-card-title {
+    font-size: 20px;
+  }
+}
+
+ion-item {
+  margin-top: 15px;
+  --padding-start: 8px;
+  --inner-padding-end: 8px;
+  --background: #000000;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+
+  ion-icon {
+    font-size: 22px;
+    color: #666;
+    margin-right: 6px;
+    transition: color 0.3s ease;
+  }
+
+  &.ion-focused ion-icon {
+    color: #3880ff; // Cambia al color primario de Ionic cuando se enfoca
+  }
+}

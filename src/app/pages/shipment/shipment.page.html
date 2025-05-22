@@ -1,0 +1,51 @@
+<ion-header> 
+  <ion-toolbar> 
+    <ion-back-button slot="start" defaultHref="/products"></ion-back-button> 
+  </ion-toolbar> 
+</ion-header> 
+
+<ion-content [fullscreen]="true" class="shipment-page">
+  <div class="container">
+    <h1>shipment</h1>
+
+    <ion-item>
+      <ion-input label="Ubicacion" name="ubicacion" [(ngModel)]="formulario.ubicacion"></ion-input>
+    </ion-item>
+
+    <div class="name-fields">
+      <ion-item>
+        <ion-input label="Nombre" name="nombre" [(ngModel)]="formulario.nombre"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input label="Apellido" name="apellido" [(ngModel)]="formulario.apellido"></ion-input>
+      </ion-item>
+    </div>
+
+    <ion-item>
+      <ion-input label="Telefono" name="telefono" [(ngModel)]="formulario.telefono"></ion-input>
+    </ion-item>
+
+    <div class="state-city-fields">
+      <ion-item>
+        <ion-input label="Estado" name="estado" [(ngModel)]="formulario.estado"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input label="Ciudad" name="ciudad" [(ngModel)]="formulario.ciudad"></ion-input>
+      </ion-item>
+    </div>
+
+    <ion-item>
+      <ion-input label="Distrito" name="distrito" [(ngModel)]="formulario.distrito"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input label="Direccion" name="direccion" [(ngModel)]="formulario.direccion"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input label="Forma de Pago" name="formaPago" [(ngModel)]="formulario.formaPago"></ion-input>
+    </ion-item>
+
+    <ion-button expand="block" color="dark" (click)="finalizarShipment()">Finalizar</ion-button>
+  </div>
+</ion-content>

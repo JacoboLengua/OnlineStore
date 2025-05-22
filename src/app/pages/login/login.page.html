@@ -1,0 +1,89 @@
+<ion-content class="ion-padding"> 
+  
+  <ion-progress-bar *ngIf="isLoading" type="indeterminate"></ion-progress-bar> 
+
+ 
+  <div class="login-container"> 
+
+    <ion-card class="login-card"> 
+
+      <ion-card-header> 
+
+        <ion-card-title>Funstore</ion-card-title> 
+
+      </ion-card-header> 
+
+ 
+
+      <ion-card-content> 
+
+        <form (ngSubmit)="onLogin()"> 
+
+          <ion-item class="ion-margin-vertical">
+            <ion-icon name="person-circle-outline" slot="start"></ion-icon>
+
+            <ion-input 
+
+              label="Usuario" 
+
+              label-placement="floating" 
+
+              fill="outline" 
+
+              placeholder="Ingrese su usuario" 
+
+              [(ngModel)]="username" 
+
+              name="username" 
+
+            ></ion-input> 
+
+          </ion-item> 
+
+ 
+
+          <ion-item class="ion-margin-vertical">
+            <ion-icon name="lock-closed-outline" slot="start"></ion-icon>
+            <ion-input 
+
+              type="password" 
+
+              label="Contraseña" 
+
+              label-placement="floating" 
+
+              fill="outline" 
+
+              placeholder="Ingrese su contraseña" 
+
+              [(ngModel)]="password" 
+
+               name="password" 
+
+            ></ion-input> 
+
+          </ion-item> 
+
+ 
+
+          <ion-button type="submit" shape="round" expand="full" class="ion-margin-top">Ingresar</ion-button> 
+
+           <!-- Botón Registrarse -->
+           <ion-button 
+           shape="round" 
+           expand="full" 
+           class="ion-margin-top" 
+           (click)="onRegister()"
+         >
+           Registrarse
+         </ion-button>
+
+        </form> 
+
+      </ion-card-content> 
+
+    </ion-card> 
+
+  </div> 
+
+</ion-content>
